@@ -3,6 +3,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:portfolio/widgets/nav_bar.dart';
 
+import '../widgets/bigText.dart';
+
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
@@ -52,37 +54,29 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Positioned(
-              bottom: height * 0.12,
-              left: width * 0.415,
-              child: Container(
-                width: (height > width) ? width / 3 : width / 5,
-                height: height / 1.8,
-                decoration: const BoxDecoration(
-                    // color: Colors.black87,
-                    image: DecorationImage(
-                        image: AssetImage(
-                          "assets/images/mausam.PNG",
-                        ),
-                        alignment: Alignment.bottomCenter,
-                        fit: BoxFit.contain)),
-                // child: Image.asset(
-                //   "assets/images/mausam.PNG",
-                //   width: width / 5,
-                //   height: height / 1.8,
-                // ),
-              )),
+            bottom: height * 0.12,
+            left: width * 0.415,
+            child: Container(
+              width: (height > width) ? width / 3 : width / 5,
+              height: height / 1.8,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(
+                      "assets/images/mausam.PNG",
+                    ),
+                    alignment: Alignment.bottomCenter,
+                    fit: BoxFit.contain),
+              ),
+            ),
+          ),
           Positioned(
-              left: width * 0.03,
-              bottom: height * 0.3,
-              child: Text(
-                "MAU\nSAM",
-                style: TextStyle(
-                    fontSize: (height > width) ? height / 15 : height / 10,
-                    // fontSize: height / 8.5,
-                    // fontSize: 92,
-                    fontWeight: FontWeight.w100,
-                    fontFamily: 'Outline Big'),
-              )),
+            left: width * 0.03,
+            bottom: height * 0.3,
+            child: const BigText(
+              text1: "MAU",
+              text2: "SAM",
+            ),
+          ),
         ],
       ),
     );
