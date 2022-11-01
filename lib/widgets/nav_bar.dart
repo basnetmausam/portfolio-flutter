@@ -15,6 +15,7 @@ class NavBar extends StatelessWidget {
           width: (width / 3) - 32,
           height: 40,
           decoration: const BoxDecoration(
+              color: Colors.black87,
               image: DecorationImage(
                   image: AssetImage(
                     "assets/images/image.png",
@@ -24,35 +25,41 @@ class NavBar extends StatelessWidget {
         ),
         SizedBox(
           width: width / 3,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: const [
-              Icon(FontAwesomeIcons.githubAlt),
-              Icon(FontAwesomeIcons.instagram),
-              Icon(FontAwesomeIcons.linkedin),
-            ],
+          child: Container(
+            color: Colors.blueAccent,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                const Icon(FontAwesomeIcons.githubAlt).pOnly(left: width / 15),
+                const Icon(FontAwesomeIcons.instagram),
+                const Icon(FontAwesomeIcons.linkedin).pOnly(right: width / 15),
+              ],
+            ),
           ),
         ),
         SizedBox(
           width: width / 3,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              const Text(
-                "projects",
-                style: TextStyle(fontSize: 18),
-              ),
-              const Text(
-                "contact",
-                style: TextStyle(fontSize: 18),
-              ).px20(),
-              const Text(
-                "xxxxx",
-                style: TextStyle(fontSize: 18),
-              ),
-            ],
+          child: Container(
+            color: Colors.red,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const [
+                Text(
+                  "projects",
+                  style: TextStyle(fontSize: 18),
+                ),
+                Text(
+                  "contact",
+                  style: TextStyle(fontSize: 18),
+                ),
+                Text(
+                  "xxxxx",
+                  style: TextStyle(fontSize: 18),
+                ),
+              ],
+            ),
           ),
         ),
       ],

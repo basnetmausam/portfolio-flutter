@@ -10,7 +10,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    var mausamImage = new AssetImage('mausam.PNG');
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -53,12 +52,24 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Positioned(
-              right: width / 2.6,
               bottom: height * 0.12,
-              child: Image.asset(
-                "assets/images/mausam.PNG",
-                height: (width + height) * 0.24,
-                // width: width * 0.25,
+              left: width * 0.415,
+              child: Container(
+                width: (height > width) ? width / 3 : width / 5,
+                height: height / 1.8,
+                decoration: const BoxDecoration(
+                    // color: Colors.black87,
+                    image: DecorationImage(
+                        image: AssetImage(
+                          "assets/images/mausam.PNG",
+                        ),
+                        alignment: Alignment.bottomCenter,
+                        fit: BoxFit.contain)),
+                // child: Image.asset(
+                //   "assets/images/mausam.PNG",
+                //   width: width / 5,
+                //   height: height / 1.8,
+                // ),
               )),
           Positioned(
               left: width * 0.03,
@@ -66,7 +77,7 @@ class HomePage extends StatelessWidget {
               child: Text(
                 "MAU\nSAM",
                 style: TextStyle(
-                    fontSize: (width + height) / 24,
+                    fontSize: (height > width) ? height / 15 : height / 10,
                     // fontSize: height / 8.5,
                     // fontSize: 92,
                     fontWeight: FontWeight.w100,
