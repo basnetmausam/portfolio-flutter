@@ -39,10 +39,13 @@ class HomePage extends StatelessWidget {
           ),
           Positioned(
             right: width / 3,
-            child: Container(
-              color: const Color(0xFFF0D0AA),
-              height: height * 0.75,
-              width: width / 3,
+            child: Hero(
+              tag: "brown",
+              child: Container(
+                color: const Color(0xFFF0D0AA),
+                height: height * 0.75,
+                width: width / 3,
+              ),
             ),
           ),
           const Align(
