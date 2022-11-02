@@ -21,7 +21,7 @@ class NavBar extends StatelessWidget {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => HomePage()),
+              MaterialPageRoute(builder: (context) => const HomePage()),
             );
           },
           child: Container(
@@ -88,7 +88,8 @@ class NavBar extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ContactPage()),
+                    MaterialPageRoute(
+                        builder: (context) => const ContactPage()),
                   );
                 },
                 child: const Text(
