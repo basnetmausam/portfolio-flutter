@@ -58,44 +58,7 @@ class ContactPage extends StatelessWidget {
                       decoration: TextDecoration.underline,
                       decorationColor: Colors.black,
                     ),
-                    // style: TextStyle(
-                    //   decoration: TextDecoration.underline,
-                    //   fontSize: 48,
-                    // ),
                   ).pOnly(bottom: height / 15),
-                  // const ListTile(
-                  //   leading: Icon(
-                  //     Icons.mail_outline,
-                  //     color: Colors.black,
-                  //   ),
-                  //   title: Text(
-                  //     "mausambasnet59@gmail.com",
-                  //     style: TextStyle(fontSize: 20),
-                  //   ),
-                  //   subtitle: Text(""),
-                  // ).pOnly(left: width / 18),
-                  // const ListTile(
-                  //   leading: Icon(
-                  //     Icons.location_city_outlined,
-                  //     color: Colors.black,
-                  //   ),
-                  //   title: Text(
-                  //     "Pulchowk, Lalitpur",
-                  //     style: TextStyle(fontSize: 20),
-                  //   ),
-                  //   subtitle: Text(""),
-                  // ).pOnly(left: width / 18),
-                  // const ListTile(
-                  //   leading: Icon(
-                  //     Icons.phone_android_outlined,
-                  //     color: Colors.black,
-                  //   ),
-                  //   subtitle: Text(""),
-                  //   title: Text(
-                  //     "+977 9868049680",
-                  //     style: TextStyle(fontSize: 20),
-                  //   ),
-                  // ).pOnly(left: width / 18),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [

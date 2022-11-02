@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/pages/contact_page.dart';
 import 'package:portfolio/pages/home_page.dart';
+import 'package:portfolio/pages/project_page.dart';
 import 'package:portfolio/pages/splash_screen.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
           textTheme: Theme.of(context)
               .textTheme
               .apply(fontFamily: 'Apple LiGothic Medium')),
-      home: ContactPage(),
+      home: const ProjectPage(),
     );
   }
 }
