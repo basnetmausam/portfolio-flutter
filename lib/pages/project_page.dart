@@ -37,22 +37,29 @@ class ProjectPage extends StatelessWidget {
           Positioned(
             bottom: 0,
             right: 0,
-            child: SizedBox(
-              height: height - 200,
-              width: width / 2,
-              child: Swiper(
-                itemCount: projects.length,
-                itemWidth: 610,
-                layout: SwiperLayout.STACK,
-                pagination: const SwiperPagination(
-                  builder: DotSwiperPaginationBuilder(activeSize: 15, space: 8),
-                ),
-                itemBuilder: (BuildContext context, int index) {
-                  return ProjectCard(
-                    index: index,
-                  );
-                },
-              ).py24(),
+            child: Hero(
+              tag: "brown",
+              child: SizedBox(
+                height: height - 200,
+                width: width / 2,
+                child: Swiper(
+                  itemCount: projects.length,
+                  itemWidth: 610,
+                  layout: SwiperLayout.STACK,
+                  pagination: const SwiperPagination(
+                    builder: DotSwiperPaginationBuilder(
+                      activeSize: 15,
+                      space: 8,
+                      activeColor: const Color(0xFFF0D0AA),
+                    ),
+                  ),
+                  itemBuilder: (BuildContext context, int index) {
+                    return ProjectCard(
+                      index: index,
+                    );
+                  },
+                ).py24(),
+              ),
             ),
           ),
           const Align(
