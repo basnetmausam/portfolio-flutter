@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/pages/home_page.dart';
 
 import 'package:portfolio/widgets/bigText.dart';
 import 'package:portfolio/widgets/nav_bar.dart';
 import 'package:velocity_x/velocity_x.dart';
+
+import '../widgets/triangle.dart';
 
 class ContactPage extends StatelessWidget {
   const ContactPage({super.key});
@@ -167,6 +170,29 @@ class ContactPage extends StatelessWidget {
               text2: "Me",
             ),
           ),
+          Positioned(
+            right: 0,
+            bottom: height * 0.06,
+            child: RawMaterialButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomePage()),
+                );
+              },
+              child: CustomPaint(
+                painter: TrianglePainter(
+                  strokeColor: Color.fromARGB(255, 30, 30, 17),
+                  strokeWidth: 10,
+                  paintingStyle: PaintingStyle.fill,
+                ),
+                child: Container(
+                  height: 100,
+                  width: 100,
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );

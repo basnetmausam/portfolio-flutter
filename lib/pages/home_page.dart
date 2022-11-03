@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/pages/project_page.dart';
 import 'package:portfolio/widgets/nav_bar.dart';
 
 import '../widgets/bigText.dart';
+import '../widgets/triangle.dart';
+import 'contact_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -78,6 +81,30 @@ class HomePage extends StatelessWidget {
               text2: "SAM",
             ),
           ),
+
+          Positioned(
+            right: 0,
+            bottom: height * 0.06,
+            child: RawMaterialButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ProjectPage()),
+                );
+              },
+              child: CustomPaint(
+                painter: TrianglePainter(
+                  strokeColor: Color(0xFFF0D0AA),
+                  strokeWidth: 10,
+                  paintingStyle: PaintingStyle.fill,
+                ),
+                child: Container(
+                  height: 100,
+                  width: 100,
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );

@@ -1,11 +1,13 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/pages/contact_page.dart';
 import 'package:portfolio/widgets/nav_bar.dart';
 import 'package:portfolio/widgets/project_card.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../data/projects.dart';
 import '../widgets/bigText.dart';
+import '../widgets/triangle.dart';
 
 class ProjectPage extends StatelessWidget {
   const ProjectPage({super.key});
@@ -86,6 +88,29 @@ class ProjectPage extends StatelessWidget {
               text2: "ECTS",
             ),
           ),
+          Positioned(
+            right: 0,
+            bottom: height * 0.06,
+            child: RawMaterialButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ContactPage()),
+                );
+              },
+              child: CustomPaint(
+                painter: TrianglePainter(
+                  strokeColor: Color.fromARGB(255, 115, 114, 111),
+                  strokeWidth: 10,
+                  paintingStyle: PaintingStyle.fill,
+                ),
+                child: Container(
+                  height: 100,
+                  width: 100,
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
