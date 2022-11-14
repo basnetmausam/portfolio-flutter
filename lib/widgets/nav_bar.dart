@@ -37,6 +37,7 @@ class NavBar extends StatelessWidget {
           ),
         ),
         SizedBox(
+          // color: Colors.amber,
           width: width / 3,
           child: Row(
             mainAxisSize: MainAxisSize.min,
@@ -49,7 +50,7 @@ class NavBar extends StatelessWidget {
                         .open('https://github.com/basnetmausam', 'new tab');
                   },
                   child: const Icon(FontAwesomeIcons.githubAlt)
-                      .pOnly(left: width / 15)),
+                      .pOnly(left: (width < 600) ? 0 : width / 15)),
               InkWell(
                   onTap: () {
                     html.window.open(
@@ -62,7 +63,7 @@ class NavBar extends StatelessWidget {
                         'https://www.linkedin.com/in/mausam-basnet', 'new tab');
                   },
                   child: const Icon(FontAwesomeIcons.linkedin)
-                      .pOnly(right: width / 15)),
+                      .pOnly(right: (width < 600) ? 0 : width / 15)),
             ],
           ),
         ),
@@ -97,10 +98,10 @@ class NavBar extends StatelessWidget {
                   style: TextStyle(fontSize: 18),
                 ),
               ),
-              const Text(
-                "xxxxx",
-                style: TextStyle(fontSize: 18),
-              ),
+              // const Text(
+              //   "xxxxx",
+              //   style: TextStyle(fontSize: 18),
+              // ),
             ],
           ),
         ),

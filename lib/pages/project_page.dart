@@ -38,37 +38,33 @@ class ProjectPage extends StatelessWidget {
 
           Positioned(
             bottom: 0,
-            right: 0,
+            left: width / 2.5,
             child: Stack(
               children: [
                 Hero(
                   tag: "brown",
-                  child: Container(
+                  child: SizedBox(
+                    // color: Colors.amber,
                     height: height - 200,
-                    width: width / 2,
-                    color: Colors.transparent,
-                  ),
-                ),
-                SizedBox(
-                  height: height - 200,
-                  width: width / 2,
-                  child: Swiper(
-                    itemCount: projects.length,
-                    itemWidth: 610,
-                    layout: SwiperLayout.STACK,
-                    pagination: const SwiperPagination(
-                      builder: DotSwiperPaginationBuilder(
-                        activeSize: 15,
-                        space: 8,
-                        activeColor: Color(0xFFF0D0AA),
+                    width: width * 0.6,
+                    child: Swiper(
+                      itemCount: projects.length,
+                      itemWidth: 610,
+                      layout: SwiperLayout.STACK,
+                      pagination: const SwiperPagination(
+                        builder: DotSwiperPaginationBuilder(
+                          activeSize: 15,
+                          space: 8,
+                          activeColor: Color(0xFFF0D0AA),
+                        ),
                       ),
-                    ),
-                    itemBuilder: (BuildContext context, int index) {
-                      return ProjectCard(
-                        index: index,
-                      );
-                    },
-                  ).py24(),
+                      itemBuilder: (BuildContext context, int index) {
+                        return ProjectCard(
+                          index: index,
+                        );
+                      },
+                    ).py24(),
+                  ),
                 ),
               ],
             ),
@@ -90,7 +86,7 @@ class ProjectPage extends StatelessWidget {
           ),
           Positioned(
             right: 0,
-            bottom: height * 0.06,
+            bottom: height * 0.07,
             child: RawMaterialButton(
               onPressed: () {
                 Navigator.push(
@@ -105,7 +101,7 @@ class ProjectPage extends StatelessWidget {
                   paintingStyle: PaintingStyle.fill,
                 ),
                 child: Container(
-                  height: 100,
+                  height: 80,
                   width: 100,
                 ),
               ),

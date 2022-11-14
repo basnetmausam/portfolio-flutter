@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/pages/project_page.dart';
 import 'package:portfolio/widgets/nav_bar.dart';
@@ -5,10 +6,16 @@ import 'package:portfolio/widgets/nav_bar.dart';
 import '../widgets/bigText.dart';
 import '../widgets/triangle.dart';
 import 'contact_page.dart';
+import 'dart:html' as html;
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -51,6 +58,73 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
+          Positioned(
+            top: (width < 600) ? 150 : height / 3,
+            left: (width < 600) ? 50 : width / 1.55,
+            right: 0,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                AnimatedTextKit(
+                  animatedTexts: [
+                    TypewriterAnimatedText(
+                      '<Hello World/> This is Mausam Basnet',
+                      textStyle: TextStyle(
+                        fontSize: (height > width) ? height / 35 : height / 25,
+                        fontWeight: FontWeight.w100,
+                      ),
+                    ),
+                    TypewriterAnimatedText(
+                      'I am a Designer',
+                      textStyle: TextStyle(
+                        fontSize: (height > width) ? height / 35 : height / 25,
+                        fontWeight: FontWeight.w100,
+                      ),
+                    ),
+                    TypewriterAnimatedText(
+                      'I am a Developer',
+                      textStyle: TextStyle(
+                        fontSize: (height > width) ? height / 35 : height / 25,
+                        fontWeight: FontWeight.w100,
+                      ),
+                    ),
+                  ],
+                  // child: Text(
+                  //   "<Hello World> I am Mausam Basnet",
+                  //   style: TextStyle(
+                  //     fontSize: (height > width) ? height / 35 : height / 28,
+                  //     fontWeight: FontWeight.w100,
+                  //   ),
+                  // ),
+                ),
+                Text(
+                  "\nCurrently I am enjoying Flutter and am lookig forward to work in it to design, develop and maintain ios and android applications.",
+                  style: TextStyle(
+                    fontSize: (height > width) ? height / 50 : height / 40,
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    html.window.open(
+                        'https://drive.google.com/file/d/1Sp7AhGlB2PcdwEL6mHNudiblgoQY-2jE/view?usp=sharing',
+                        'new tab');
+                  },
+                  child: const Text(
+                    "\ndownload cv",
+                    style: TextStyle(
+                      fontSize: 16,
+                      shadows: [
+                        Shadow(color: Colors.black, offset: Offset(0, -5))
+                      ],
+                      color: Colors.transparent,
+                      decoration: TextDecoration.underline,
+                      decorationColor: Colors.black,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
           const Align(
             alignment: Alignment.topRight,
             child: SizedBox(
@@ -59,11 +133,13 @@ class HomePage extends StatelessWidget {
           ),
           Positioned(
             bottom: height * 0.12,
-            left: width * 0.415,
+            right: width / 3.2,
             child: Container(
-              width: (height > width) ? width / 3 : width / 5,
+              width: width / 3,
+              // width: (height > width) ? width / 3 : width / 5,
               height: height / 1.8,
               decoration: const BoxDecoration(
+                // color: Color.fromARGB(57, 255, 193, 7),
                 image: DecorationImage(
                     image: AssetImage(
                       "assets/images/mausam.PNG",
@@ -84,7 +160,7 @@ class HomePage extends StatelessWidget {
 
           Positioned(
             right: 0,
-            bottom: height * 0.06,
+            bottom: height * 0.07,
             child: RawMaterialButton(
               onPressed: () {
                 Navigator.push(
@@ -94,12 +170,12 @@ class HomePage extends StatelessWidget {
               },
               child: CustomPaint(
                 painter: TrianglePainter(
-                  strokeColor: Color(0xFFF0D0AA),
+                  strokeColor: const Color(0xFFF0D0AA),
                   strokeWidth: 10,
                   paintingStyle: PaintingStyle.fill,
                 ),
                 child: Container(
-                  height: 100,
+                  height: 80,
                   width: 100,
                 ),
               ),

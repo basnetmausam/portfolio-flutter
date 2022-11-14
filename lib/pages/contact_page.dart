@@ -63,7 +63,7 @@ class ContactPage extends StatelessWidget {
                           shadows: const [
                             Shadow(color: Colors.black, offset: Offset(0, -5))
                           ],
-                          color: Colors.transparent,
+                          color: Color.fromARGB(0, 40, 20, 20),
                           decoration: TextDecoration.underline,
                           decorationColor: Colors.black,
                         ),

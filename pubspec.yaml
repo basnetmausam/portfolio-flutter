@@ -43,6 +43,10 @@ dependencies:
   card_swiper: ^2.0.4
   url_launcher: ^6.1.6
   web_smooth_scroll: ^1.0.0
+  firebase_core: ^2.1.1
+  url_strategy: ^0.2.0
+  hovering: ^1.0.4
+  animated_text_kit: ^4.2.2
 
 dev_dependencies:
   flutter_test:

@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/pages/home_page.dart';
-import 'package:portfolio/pages/single_page.dart';
-import 'package:portfolio/pages/splash_screen.dart';
+import 'package:portfolio/pages/project_page.dart';
 
-void main() {
+import 'package:portfolio/pages/splash_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:url_strategy/url_strategy.dart';
+
+import 'firebase_options.dart';
+
+Future<void> main() async {
+  setPathUrlStrategy();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -21,10 +31,7 @@ class MyApp extends StatelessWidget {
           textTheme: Theme.of(context)
               .textTheme
               .apply(fontFamily: 'Apple LiGothic Medium')),
-      home: HomePage(),
+      home: const ProjectPage(),
     );
   }
 }
-
-/// Example Text
-
