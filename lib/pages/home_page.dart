@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/pages/project_page.dart';
 import 'package:portfolio/widgets/nav_bar.dart';
 
-import '../widgets/bigText.dart';
+import '../widgets/big_text.dart';
 import '../widgets/triangle.dart';
-import 'contact_page.dart';
+
 import 'dart:html' as html;
 
 class HomePage extends StatefulWidget {
@@ -176,7 +176,7 @@ class _HomePageState extends State<HomePage> {
                   strokeWidth: 10,
                   paintingStyle: PaintingStyle.fill,
                 ),
-                child: Container(
+                child: const SizedBox(
                   height: 80,
                   width: 100,
                 ),

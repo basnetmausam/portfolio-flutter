@@ -6,7 +6,7 @@ import 'package:portfolio/widgets/project_card.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../data/projects.dart';
-import '../widgets/bigText.dart';
+import '../widgets/big_text.dart';
 import '../widgets/triangle.dart';
 
 class ProjectPage extends StatelessWidget {
@@ -95,11 +95,11 @@ class ProjectPage extends StatelessWidget {
               },
               child: CustomPaint(
                 painter: TrianglePainter(
-                  strokeColor: Color.fromARGB(255, 115, 114, 111),
+                  strokeColor: const Color.fromARGB(255, 115, 114, 111),
                   strokeWidth: 10,
                   paintingStyle: PaintingStyle.fill,
                 ),
-                child: Container(
+                child: const SizedBox(
                   height: 80,
                   width: 100,
                 ),

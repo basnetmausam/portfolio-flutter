@@ -49,7 +49,7 @@ class ProjectCard extends StatelessWidget {
                 'Tech Used: ${projects[index].tech}',
                 style: TextStyle(
                   fontSize: (height > width) ? height / 50 : height / 40,
-                  color: Color(0xff47455f),
+                  color: const Color(0xff47455f),
                 ),
                 textAlign: TextAlign.left,
               ),

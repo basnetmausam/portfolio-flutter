@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/pages/home_page.dart';
 
-import 'package:portfolio/widgets/bigText.dart';
+import 'package:portfolio/widgets/big_text.dart';
 import 'package:portfolio/widgets/nav_bar.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -67,7 +67,7 @@ class ContactPage extends StatelessWidget {
                           shadows: const [
                             Shadow(color: Colors.black, offset: Offset(0, -5))
                           ],
-                          color: Color.fromARGB(0, 40, 20, 20),
+                          color: const Color.fromARGB(0, 40, 20, 20),
                           decoration: TextDecoration.underline,
                           decorationColor: Colors.black,
                         ),
@@ -186,11 +186,11 @@ class ContactPage extends StatelessWidget {
               },
               child: CustomPaint(
                 painter: TrianglePainter(
-                  strokeColor: Color.fromARGB(255, 30, 30, 17),
+                  strokeColor: const Color.fromARGB(255, 30, 30, 17),
                   strokeWidth: 10,
                   paintingStyle: PaintingStyle.fill,
                 ),
-                child: Container(
+                child: const SizedBox(
                   height: 80,
                   width: 100,
                 ),
