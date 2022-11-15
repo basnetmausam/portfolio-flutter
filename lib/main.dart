@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           textTheme: Theme.of(context)
               .textTheme
               .apply(fontFamily: 'Apple LiGothic Medium')),
-      home: const ProjectPage(),
+      home: const SplashScreen(),
     );
   }
 }
