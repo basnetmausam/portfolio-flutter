@@ -43,6 +43,6 @@ List<ProjectInfo> projects = [
     "assets/images/aawaj.png",
     "-Major Project (Ongoing)\n A nepali text to speech application for the voice of voiceless. Through this application any kind of physically disabled person can use the UI provided to generare the sentences and then into the voice",
     "Flutter, Python, tensorflow 2.0",
-    "..",
+    "https://github.com/basnetmausam/",
   ),
 ];

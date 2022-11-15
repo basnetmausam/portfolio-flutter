@@ -54,7 +54,7 @@ class ProjectPage extends StatelessWidget {
                         builder: DotSwiperPaginationBuilder(
                           activeSize: 15,
                           space: 8,
-                          activeColor: Color.fromARGB(255, 150, 234, 77),
+                          activeColor: Color.fromARGB(255, 234, 161, 77),
                         ),
                       ),
                       itemBuilder: (BuildContext context, int index) {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/data/projects.dart';
+import 'dart:html' as html;
 
 class ProjectCard extends StatelessWidget {
   final int index;
@@ -10,6 +11,9 @@ class ProjectCard extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return InkWell(
+      onTap: () {
+        html.window.open(projects[index].link, 'new tab');
+      },
       child: Card(
         elevation: 8,
         shape: RoundedRectangleBorder(

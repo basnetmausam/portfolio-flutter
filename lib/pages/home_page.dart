@@ -100,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                   // ),
                 ),
                 Text(
-                  "\nCurrently I am enjoying Flutter and am lookig forward to work in it to design, develop and maintain ios and android applications.",
+                  "\nCurrently I am enjoying Flutter and am looking forward to work in it to design, develop and maintain ios and android applications.",
                   style: TextStyle(
                     fontSize: (height > width) ? height / 50 : height / 40,
                   ),
