@@ -37,16 +37,15 @@ class ProjectPage extends StatelessWidget {
           ),
 
           Positioned(
-            bottom: 0,
-            left: width / 2.5,
+            bottom: (height > width) ? height / 5 : 0,
+            left: (height > width) ? width / 3 : width / 2.5,
             child: Stack(
               children: [
-                Hero(
-                  tag: "brown",
-                  child: SizedBox(
-                    // color: Colors.amber,
-                    height: height - 200,
-                    width: width * 0.6,
+                SizedBox(
+                  height: (height < width) ? height - 300 : height - 350,
+                  width: (height > width) ? width * 0.66 : width * 0.6,
+                  child: Hero(
+                    tag: "brown",
                     child: Swiper(
                       itemCount: projects.length,
                       itemWidth: 610,
@@ -55,7 +54,7 @@ class ProjectPage extends StatelessWidget {
                         builder: DotSwiperPaginationBuilder(
                           activeSize: 15,
                           space: 8,
-                          activeColor: Color(0xFFF0D0AA),
+                          activeColor: Color.fromARGB(255, 150, 234, 77),
                         ),
                       ),
                       itemBuilder: (BuildContext context, int index) {

@@ -27,22 +27,22 @@ List<ProjectInfo> projects = [
   ProjectInfo(
     "Recommendation Letter Generator",
     "assets/images/letter.png",
-    "- Software Engineering and DBMS Project\nWeb Application which is used to request and get Recommendation Letter from our Professors of Pulchowk Campus. The dynamic algorithm used here can automatically generate letters and can be edited on purpose.",
-    "Django, HTML, CSS, Bootstarp, SQL for database",
+    "- Software Engineering and DBMS Project\nWeb Application which is used to request and get Recommendation Letter from our Professors of Pulchowk Campus. The algorithm can automatically generate letters and can be edited on purpose.",
+    "Django, HTML, CSS, SQL for DB",
     "https://github.com/basnetmausam/letter",
   ),
   ProjectInfo(
     "IOE App",
     "assets/images/ioe.png",
     "- Minor Project\nA mobile application built IOE colleges. Notices, news, events regarding IOE and results of different programs are  made available on a single mobile application unlike visiting different portals of IOE.",
-    "Flutter, Figma for desining, Firebase as backend, SQL",
+    "Flutter, Firebase, Django, SQL",
     "https://github.com/basnetmausam/ioe_app",
   ),
   ProjectInfo(
     "Aawaj",
     "assets/images/aawaj.png",
     "-Major Project (Ongoing)\n A nepali text to speech application for the voice of voiceless. Through this application any kind of physically disabled person can use the UI provided to generare the sentences and then into the voice",
-    "Flutter, Figma, Python, Pytorch, Tactron 2, tensorflow 2.0",
+    "Flutter, Python, tensorflow 2.0",
     "..",
   ),
 ];

@@ -52,7 +52,9 @@ class _HomePageState extends State<HomePage> {
             child: Hero(
               tag: "brown",
               child: Container(
-                color: const Color(0xFFF0D0AA),
+                decoration: const BoxDecoration(
+                    color: Color(0xFFF0D0AA),
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
                 height: height * 0.75,
                 width: width / 3,
               ),

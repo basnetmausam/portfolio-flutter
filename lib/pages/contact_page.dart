@@ -35,20 +35,24 @@ class ContactPage extends StatelessWidget {
           ),
 
           Positioned(
-            right: (width < height) ? 0 : width / 15,
+            right: (width < 900) ? 0 : width / 5,
             bottom: 0,
             child: Stack(
               children: [
                 Hero(
                   tag: "brown",
                   child: Container(
-                    color: const Color(0xFFF0D0AA),
+                    decoration: const BoxDecoration(
+                        color: Color(0xFFF0D0AA),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20))),
                     height: height * 0.75,
-                    width: (width < height) ? width / 2 : width / 2.75,
+                    width: (width < 900) ? width / 2 : width / 2.75,
                   ),
                 ),
                 SizedBox(
-                  width: (width < height) ? width / 2 : width / 2.75,
+                  width: (width < 900) ? width / 2 : width / 2.75,
                   // color: Colors.amber,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -59,7 +63,7 @@ class ContactPage extends StatelessWidget {
                         style: TextStyle(
                           fontSize: (width > height)
                               ? (height * width) * 0.00005
-                              : 32,
+                              : 30,
                           shadows: const [
                             Shadow(color: Colors.black, offset: Offset(0, -5))
                           ],
@@ -67,14 +71,14 @@ class ContactPage extends StatelessWidget {
                           decoration: TextDecoration.underline,
                           decorationColor: Colors.black,
                         ),
-                      ).pOnly(bottom: height / 15),
+                      ).pOnly(bottom: height / 15, top: height / 15),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           const Icon(Icons.mail_outlined).pOnly(right: 16),
-                          const Text(
+                          Text(
                             "mausambasnet59@gmail.com",
-                            style: TextStyle(fontSize: 20),
+                            style: TextStyle(fontSize: (width < 900) ? 17 : 20),
                           ),
                         ],
                       ).pOnly(left: width / 18, bottom: height / 30),
@@ -172,7 +176,7 @@ class ContactPage extends StatelessWidget {
           ),
           Positioned(
             right: 0,
-            bottom: height * 0.06,
+            bottom: height * 0.07,
             child: RawMaterialButton(
               onPressed: () {
                 Navigator.push(
@@ -187,7 +191,7 @@ class ContactPage extends StatelessWidget {
                   paintingStyle: PaintingStyle.fill,
                 ),
                 child: Container(
-                  height: 100,
+                  height: 80,
                   width: 100,
                 ),
               ),
