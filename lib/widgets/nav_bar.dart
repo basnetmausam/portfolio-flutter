@@ -2,6 +2,7 @@ import 'dart:html' as html;
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio/widgets/hover_effect.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'package:portfolio/pages/contact_page.dart';
@@ -17,24 +18,28 @@ class NavBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        InkWell(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const HomePage()),
+        HoverBuilder(
+          builder: (isHovered) {
+            return InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomePage()),
+                );
+              },
+              child: Container(
+                width: (width / 3) - 32,
+                height: 40,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(
+                          "assets/images/image.png",
+                        ),
+                        alignment: Alignment.bottomLeft,
+                        fit: BoxFit.contain)),
+              ),
             );
           },
-          child: Container(
-            width: (width / 3) - 32,
-            height: 40,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(
-                      "assets/images/image.png",
-                    ),
-                    alignment: Alignment.bottomLeft,
-                    fit: BoxFit.contain)),
-          ),
         ),
         SizedBox(
           // color: Colors.amber,
@@ -49,21 +54,34 @@ class NavBar extends StatelessWidget {
                     html.window
                         .open('https://github.com/basnetmausam', 'new tab');
                   },
-                  child: const Icon(FontAwesomeIcons.githubAlt)
-                      .pOnly(left: (width < 600) ? 0 : width / 15)),
+                  child: HoverBuilder(
+                    builder: (isHovered) => Icon(
+                      FontAwesomeIcons.githubAlt,
+                      color: isHovered ? Colors.blueGrey : Colors.black,
+                    ),
+                  ).pOnly(left: (width < 600) ? 0 : width / 15)),
               InkWell(
                   onTap: () {
                     html.window.open(
                         'https://www.instagram.com/basnet.mausam/', 'new tab');
                   },
-                  child: const Icon(FontAwesomeIcons.instagram)),
+                  child: HoverBuilder(
+                    builder: (isHovered) => Icon(
+                      FontAwesomeIcons.instagram,
+                      color: isHovered ? Colors.blueGrey : Colors.black,
+                    ),
+                  )),
               InkWell(
                   onTap: () {
                     html.window.open(
                         'https://www.linkedin.com/in/mausam-basnet', 'new tab');
                   },
-                  child: const Icon(FontAwesomeIcons.linkedin)
-                      .pOnly(right: (width < 600) ? 0 : width / 15)),
+                  child: HoverBuilder(
+                    builder: (isHovered) => Icon(
+                      FontAwesomeIcons.linkedin,
+                      color: isHovered ? Colors.blueGrey : Colors.black,
+                    ),
+                  ).pOnly(right: (width < 600) ? 0 : width / 15)),
             ],
           ),
         ),
@@ -80,9 +98,13 @@ class NavBar extends StatelessWidget {
                         builder: (context) => const ProjectPage()),
                   );
                 },
-                child: const Text(
-                  "projects",
-                  style: TextStyle(fontSize: 18),
+                child: HoverBuilder(
+                  builder: (isHovered) => Text(
+                    "projects",
+                    style: TextStyle(
+                        fontSize: 18,
+                        color: isHovered ? Colors.blueGrey : Colors.black),
+                  ),
                 ),
               ),
               InkWell(
@@ -93,9 +115,13 @@ class NavBar extends StatelessWidget {
                         builder: (context) => const ContactPage()),
                   );
                 },
-                child: const Text(
-                  "contact",
-                  style: TextStyle(fontSize: 18),
+                child: HoverBuilder(
+                  builder: (isHovered) => Text(
+                    "contact",
+                    style: TextStyle(
+                        fontSize: 18,
+                        color: isHovered ? Colors.blueGrey : Colors.black),
+                  ),
                 ),
               ),
               // const Text(

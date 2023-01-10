@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/pages/project_page.dart';
+import 'package:portfolio/widgets/hover_effect.dart';
 import 'package:portfolio/widgets/nav_bar.dart';
 
 import '../widgets/big_text.dart';
@@ -100,30 +101,35 @@ class _HomePageState extends State<HomePage> {
                   // ),
                 ),
                 Text(
-                  "\nCurrently I am enjoying Flutter and am looking forward to work in it to design, develop and maintain ios and android applications.",
+                  "\nCurrently I am enjoying Flutter and am looking forward to work in it to design, develop and maintain ios and android applications.\n",
                   style: TextStyle(
                     fontSize: (height > width) ? height / 50 : height / 40,
                   ),
                 ),
                 InkWell(
-                  onTap: () {
-                    html.window.open(
-                        'https://drive.google.com/file/d/1Sp7AhGlB2PcdwEL6mHNudiblgoQY-2jE/view?usp=sharing',
-                        'new tab');
-                  },
-                  child: const Text(
-                    "\ndownload cv",
-                    style: TextStyle(
-                      fontSize: 16,
-                      shadows: [
-                        Shadow(color: Colors.black, offset: Offset(0, -5))
-                      ],
-                      color: Colors.transparent,
-                      decoration: TextDecoration.underline,
-                      decorationColor: Colors.black,
-                    ),
-                  ),
-                ),
+                    onTap: () {
+                      html.window.open(
+                          'https://drive.google.com/file/d/1Sp7AhGlB2PcdwEL6mHNudiblgoQY-2jE/view?usp=sharing',
+                          'new tab');
+                    },
+                    child: HoverBuilder(
+                      builder: (isHovered) => Text(
+                        "download cv",
+                        style: TextStyle(
+                          fontSize: 16,
+                          shadows: [
+                            Shadow(
+                                color:
+                                    isHovered ? Colors.blueGrey : Colors.black,
+                                offset: const Offset(0, -5))
+                          ],
+                          color: Colors.transparent,
+                          decoration: TextDecoration.underline,
+                          decorationColor:
+                              isHovered ? Colors.blueGrey : Colors.black,
+                        ),
+                      ),
+                    )),
               ],
             ),
           ),
