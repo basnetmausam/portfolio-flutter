@@ -124,6 +124,23 @@ class NavBar extends StatelessWidget {
                   ),
                 ),
               ),
+
+              InkWell(
+                onTap: () {
+                  html.window.open(
+                      'https://drive.google.com/file/d/1k-veGngFxkTaWmOrgEAAHFTpmN2orOLf/view?usp=sharing',
+                      'new tab');
+                },
+                child: HoverBuilder(
+                  builder: (isHovered) => Text(
+                    "resume",
+                    style: TextStyle(
+                        fontSize: 18,
+                        color: isHovered ? Colors.blueGrey : Colors.black),
+                  ),
+                ),
+              ),
+
               // const Text(
               //   "xxxxx",
               //   style: TextStyle(fontSize: 18),
