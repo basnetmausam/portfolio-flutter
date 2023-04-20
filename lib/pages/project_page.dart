@@ -1,5 +1,6 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:portfolio/pages/contact_page.dart';
 import 'package:portfolio/widgets/nav_bar.dart';
 import 'package:portfolio/widgets/project_card.dart';
@@ -7,6 +8,7 @@ import 'package:velocity_x/velocity_x.dart';
 
 import '../data/projects.dart';
 import '../widgets/big_text.dart';
+import '../widgets/hover_effect.dart';
 import '../widgets/triangle.dart';
 
 class ProjectPage extends StatelessWidget {
@@ -83,29 +85,26 @@ class ProjectPage extends StatelessWidget {
               text2: "ECTS",
             ),
           ),
+
           Positioned(
-            right: 0,
-            bottom: height * 0.07,
-            child: RawMaterialButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ContactPage()),
-                );
-              },
-              child: CustomPaint(
-                painter: TrianglePainter(
-                  strokeColor: const Color.fromARGB(255, 115, 114, 111),
-                  strokeWidth: 10,
-                  paintingStyle: PaintingStyle.fill,
-                ),
-                child: const SizedBox(
-                  height: 80,
-                  width: 100,
-                ),
-              ),
-            ),
-          )
+            right: 20,
+            bottom: height * 0.115,
+            child: HoverBuilder(
+                builder: (isHovered) => IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ContactPage()),
+                        );
+                      },
+                      icon: Icon(
+                        Ionicons.play_skip_forward_outline,
+                        size: 50,
+                        color: isHovered ? Colors.blueGrey : Colors.black,
+                      ),
+                    )),
+          ),
         ],
       ),
     );

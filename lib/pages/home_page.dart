@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/pages/project_page.dart';
 import 'package:portfolio/widgets/hover_effect.dart';
 import 'package:portfolio/widgets/nav_bar.dart';
+import 'package:ionicons/ionicons.dart';
 
 import '../widgets/big_text.dart';
 import '../widgets/triangle.dart';
@@ -167,28 +168,24 @@ class _HomePageState extends State<HomePage> {
           ),
 
           Positioned(
-            right: 0,
-            bottom: height * 0.07,
-            child: RawMaterialButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ProjectPage()),
-                );
-              },
-              child: CustomPaint(
-                painter: TrianglePainter(
-                  strokeColor: const Color(0xFFF0D0AA),
-                  strokeWidth: 10,
-                  paintingStyle: PaintingStyle.fill,
-                ),
-                child: const SizedBox(
-                  height: 80,
-                  width: 100,
-                ),
-              ),
-            ),
-          )
+            right: 20,
+            bottom: height * 0.115,
+            child: HoverBuilder(
+                builder: (isHovered) => IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ProjectPage()),
+                        );
+                      },
+                      icon: Icon(
+                        Ionicons.play_skip_forward_outline,
+                        size: 50,
+                        color: isHovered ? Colors.blueGrey : Colors.black,
+                      ),
+                    )),
+          ),
         ],
       ),
     );

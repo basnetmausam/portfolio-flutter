@@ -47,6 +47,7 @@ dependencies:
   url_strategy: ^0.2.0
   hovering: ^1.0.4
   animated_text_kit: ^4.2.2
+  favicon: ^1.1.1
 
 dev_dependencies:
   flutter_test:
